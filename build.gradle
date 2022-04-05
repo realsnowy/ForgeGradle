@@ -20,7 +20,7 @@ repositories {
     mavenLocal()
     maven {
         name = "forge"
-        url = "http://files.minecraftforge.net/maven"
+        url = "https://maven.minecraftforge.net/"
     }
     maven {
         // because SpecialSource doesnt have a full release
@@ -128,7 +128,7 @@ uploadArchives {
             mavenDeployer {
                 configuration = configurations.deployerJars
 
-				repository(url: "https://files.minecraftforge.net/maven/manage/upload") {
+				repository(url: "https://maven.minecraftforge.net/manage/upload") {
 					authentication(userName: "forge", password: project.getProperty('forgeMavenPass'))
 				}
 
