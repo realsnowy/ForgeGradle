@@ -72,8 +72,13 @@ dependencies {
 
     // mcp stuff
     compile 'de.oceanlabs.mcp:RetroGuard:3.6.6'
-    compile 'de.oceanlabs.mcp:mcinjector:3.2-SNAPSHOT'
-    compile 'net.minecraftforge.srg2source:Srg2Source:3.2-SNAPSHOT'
+    compile ('de.oceanlabs.mcp:mcinjector:3.2-SNAPSHOT') {
+			exclude group: 'org.ow2.asm'
+		}
+    compile ('net.minecraftforge.srg2source:Srg2Source:3.2-SNAPSHOT') {
+			exclude group: 'org.ow2.asm'
+			exclude group: 'org.eclipse.equinox', module: 'org.eclipse.equinox.common'
+		}
 
     // stupid maven
     deployerJars "org.apache.maven.wagon:wagon-ssh:2.2"
