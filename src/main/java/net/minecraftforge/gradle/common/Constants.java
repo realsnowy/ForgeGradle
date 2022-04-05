@@ -61,7 +61,7 @@ public class Constants
 
     // MCP things
     public static final String CONFIG_MCP_DATA  = "mcpSnapshotDataConfig";
-    public static final String MCP_JSON_URL     = "http://export.mcpbot.bspk.rs/versions.json";
+    public static final String MCP_JSON_URL     = "https://maven.minecraftforge.net/de/oceanlabs/mcp/versions.json";
 
     // things in the cache dir.
     public static final String NATIVES_DIR      = "{CACHE_DIR}/minecraft/net/minecraft/minecraft_natives/{MC_VERSION}";
@@ -264,7 +264,7 @@ public class Constants
         {}
         return null; // Should never get to here
     }
-    
+
     /**
      * Throws a null runtime exception if the resource isnt found.
      * @param resource String name of the resource your looking for
@@ -273,15 +273,15 @@ public class Constants
     public static URL getResource(String resource)
     {
         ClassLoader loader = BaseExtension.class.getClassLoader();
-        
+
         if (loader == null)
             throw new RuntimeException("ClassLoader is null! IMPOSSIBRU");
-        
+
         URL url = loader.getResource(resource);
-        
+
         if (url == null)
             throw new RuntimeException("Resource "+resource+" not found");
-        
+
         return url;
     }
 }
